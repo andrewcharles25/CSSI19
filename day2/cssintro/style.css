@@ -1,0 +1,24 @@
+h1
+{
+  color: red;
+  font-size: 5em;
+  font-family: monospace;
+}
+
+h2
+{
+  color: blue;
+  font-size: 4em;
+  font-family: serif;
+}
+
+a
+{
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+ul
+{
+  list-style-image:url(https://cdn.shopify.com/s/files/1/0891/8314/products/Patrick_Star_mem_515a0f9e16255_large.jpeg?v=1459072430)
+}
