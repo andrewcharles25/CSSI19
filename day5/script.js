@@ -14,18 +14,18 @@ console.log('1\n2\n3\n4\n5\n6\n7\n8\n9\n10');
 
 
 
-//let result = prompt("Enter Your Name");
-//console.log("Hello,",result);
+let result = prompt("Enter Your Name");
+console.log("Hello,",result);
 
-//let num = prompt ("Enter a number");
-//num = Number(num);
+let num = prompt ("Enter a number");
+num = Number(num);
 
-//if(isNaN(num))
-//{
-//    num = 10;
-//}
-//num = num + 10;
-//console.log(num);
+if(isNaN(num))
+ {
+    num = 10;
+}
+num = num + 10;
+console.log(num);
 
 let num2 = prompt("Enter a Grade");
 let grade = Number(num2);
