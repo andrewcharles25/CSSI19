@@ -40,7 +40,8 @@ def get_fortune():
     fortune_list=['fortune1', 'fortune2']
     # Use the random library to return a random element from the array
     # instead of "None"
-    random_fortune = None
+    i = random.randint(0, len(fortune_list)-1)
+    random_fortune = fortune_list[i]
     return random_fortune
 
 
@@ -51,7 +52,8 @@ class FortuneHandler(webapp2.RequestHandler):
     def get(self):
         # In part 2, instead of returning this string,
         # make a function call that returns a random fortune.
-        self.response.write('a response from the FortuneHandler')
+        x = get_fortune()
+        self.response.write(x)
     # Add a post method
     # def post(self):
 
@@ -59,10 +61,15 @@ class HelloHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello World. Welcome to the root route of my app')
 
+class GoodbyeHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.write('Hello World from GoodbyeHandler')
+
 # Route mapping
 app = webapp2.WSGIApplication([
     # This line routes the main url ('/')  - also know as
     # The root route - to the Fortune Handler
     ('/', HelloHandler),
+    ('/farewell', GoodbyeHandler),
     ('/predict', FortuneHandler) #maps '/predict' to the FortuneHandler
 ], debug=True)
