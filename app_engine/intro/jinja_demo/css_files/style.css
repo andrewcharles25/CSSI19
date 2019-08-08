@@ -1,7 +1,68 @@
+/*----------------Welcome Page---------------*/ 
+#header1welcome{
+  background-color: #F1F1F1;
+text-align: center;
+padding: 20px;
+}
+
+#navwelcome {
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navwelcome a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#navwelcome a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+/*---------------Result Page-----------------*/
+#navresult{
+  overflow: hidden;
+  background-color: #333;
+}
+
+#navresult a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#navresult a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#header2result{
+  background-color: #F1F1F1;
+text-align: center;
+padding: 20px;
+}
+
+
+
+#img{
+  
+}
+
+/*---------------Fav Page------------------*/
 #color1{
 background-color: gold;
 border: 2px solid black;
 }
+
 
 #color2{
     background-color: rgb(255, 0, 0);
@@ -22,37 +83,21 @@ border: 2px solid black;
 
 }
 
-#header1{
-    background-color: #F1F1F1;
-  text-align: center;
-  padding: 20px;
+#navfav {
+  overflow: hidden;
+  background-color: #333;
 }
 
-#header2{
-    background-color: #F1F1F1;
+#navfav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
   text-align: center;
-  padding: 20px;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-#nav {
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  #nav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  
-  #nav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-#img{
-    
-  }
+#navfav a:hover {
+  background-color: #ddd;
+  color: black;
+}

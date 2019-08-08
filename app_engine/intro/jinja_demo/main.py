@@ -48,6 +48,21 @@ class FavPage(webapp2.RequestHandler):
         t = the_jinja_env.get_template('templates/fav.html')
         favs = {"item1":"Google","item2":"Youtube","item3":"Twitter","item4":"FaceBook","title":"Memes R US"}
         self.response.write(t.render(favs))
+    #def post(self):
+        #t = the_jinja_env.get_template('templates/post.html')
+        #fn = self.request.get("firstname")
+        #ln = self.request.get("lastname")
+        #self.response.write(fn + "," + ln)
+
+class MainPage(webapp2.RequestHandler):
+    def get(self):
+        welcome_template = the_jinja_env.get_template('templates/welcome.html')
+        the_variable_dict = {
+            "line1": "If Cinderella's shoe was a perfect fit",
+            "line2": "Why did it fall off?",
+            "img_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Deep_in_thought.jpg"
+        }
+        self.response.write(welcome_template.render(the_variable_dict))
 
 routes = [('/', MainPage),
             ('/about', AboutPage),
