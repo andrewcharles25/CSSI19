@@ -33,11 +33,19 @@
 import webapp2
 import os
 import random
+import jinja2
+import logging 
 
+the_jinja_env = jinja2.Environment(
+    loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
 
 def get_fortune():
     # Add a list of fortunes to the empty fortune_list array
-    fortune_list=['fortune1', 'fortune2']
+    fortune_list=['Patience is the companion of wisdom', 
+    'A fool thinks himself to be wise, but a wise man knows himself to be a fool.',
+    'Life is a dream for the wise, a game for the fool, a comedy for the rich, a tragedy for the poor.']
     # Use the random library to return a random element from the array
     # instead of "None"
     i = random.randint(0, len(fortune_list)-1)
@@ -52,11 +60,17 @@ class FortuneHandler(webapp2.RequestHandler):
     def get(self):
         # In part 2, instead of returning this string,
         # make a function call that returns a random fortune.
-        x = get_fortune()
-        self.response.write(x)
+        logging.info(">>> This meesage should be in the terminal")
+        t = the_jinja_env.get_template("templates/fortune-start.html")
+        self.response.write(t.render())
     # Add a post method
-    # def post(self):
-
+    def post(self):
+        user_astro_sign = self.request.get("user_astrological_sign")
+        logging.info("the value user_astro_sign is:" + user_astro_sign)
+        end_template = the_jinja_env.get_template("templates/fortune-results.html")
+        fortune = get_fortune()
+        my_dict = {"sign": user_astro_sign, "fortune":fortune}
+        self.response.write(end_template.render(my_dict))
 class HelloHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello World. Welcome to the root route of my app')
